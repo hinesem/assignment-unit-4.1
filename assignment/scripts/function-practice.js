@@ -55,58 +55,81 @@ console.log( 'isPositive - should say true', isPositive(3) );
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
 
+console.log('\\n')
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
+
+console.log('---6: return last item in array---')
 function getLast( array ) {
- return lastInArray[lastInArray.length -1];
+ //return lastInArray[lastInArray.length -1];
+  return array[array.length -1];
 }
 let lastInArray = ['a', 'b', 'c'];
+let emptyArray = [ ];
 console.log(getLast(lastInArray));
+console.log(getLast(emptyArray)); // should return "undefined" if array is empty
+
+console.log('\n\n')
+
+
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-
+console.log('---7: function to find value in array---')
 let newArray = ['h', 'i', 'j', 'k'];
 
 function find( value, array ){
-  for (let i of newArray) {
+  for (let i of array) {
     if (i === value) {
-    console.log(`${value} is present`)
-    break;
+    //return (`${true} ${value} is in the array`);
+    return true;
+    //break;
     } else if (i !== value) {
-      console.log(`${value} is not present`);
+      //return (`${false} ${value} is not in the array`);
+      return false;
     }
   }
 }
-console.log(find('z', newArray));
+console.log(find('z', newArray)); // should return false
+console.log(find('h', newArray)); // should return true
+
+console.log('\n\n')
+
+
+
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
+console.log('---8: function to check if letter is the first in a string---')
 function isFirstLetter(letter, string) {
   const firstLetterArray = string.split("");
     if (firstLetterArray[0] === letter) {
-      console.log(`${letter} is the first letter in ${string}`);
-    } else if (firstLetterArray[0] !== letter) {
-      console.log(`${letter} is not the first letter in ${string}`)
-    } else if (firstLetterArray[0] === " ") {
-      console.log('array is empty')
+      //console.log(`${letter} is the first letter in ${string}`);
+      return true;
+    } else {
+      return false;
     }
+    
+    // else if (firstLetterArray[0] !== letter) {
+    //   console.log(`${letter} is not the first letter in ${string}`)
+    // } else if (firstLetterArray[0] === " ") {
+    //   console.log('array is empty')
+    // }
   }
 
 
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
+console.log('\n\n');
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
-  // TODO: loop to add items
-  return sum;
-}
+console.log('---sum of array---')
+
+
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
